@@ -2,11 +2,11 @@ const router = require("express").Router()
 const logger = require("../config/logger.config")
 const fs = require("fs")
 const httpStatus = require("http-status")
-const { STOCK_PATH, IMAGE_PATH } = require("../config/const")
+const { ROOT, STOCK_PATH, IMAGE_PATH } = require("../config/const")
 
 const getStocks = async (req, res) => {
   try {
-    fs.readdir(STOCK_PATH, (err, files) => {
+    fs.readdir(ROOT + STOCK_PATH, (err, files) => {
       if (err) {
         logger.error(err.stack);
         return res.status(httpStatus.INTERNAL_SERVER_ERROR).send({

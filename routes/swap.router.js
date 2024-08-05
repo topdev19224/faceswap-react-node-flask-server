@@ -6,7 +6,6 @@ const { ROOT, AI_SERVER_ENDPOINT, IMAGE_PATH } = require("../config/const")
 
 const faceSwap = async (req, res) => {
   try {
-    console.log(req.body)
     const sourceImage = req.body.sourceImage
     const targetImage = req.body.targetImage
     const sourceImagePath = ROOT + '/store/images/' + sourceImage.type + '/' + sourceImage.name
